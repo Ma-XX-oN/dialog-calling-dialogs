@@ -64,6 +64,7 @@ BEGIN_MESSAGE_MAP(CdialogcallingdialogsDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+    ON_BN_CLICKED(IDC_DLG_LVL_1, &CdialogcallingdialogsDlg::OnBnClickedDlgLvl1)
 END_MESSAGE_MAP()
 
 
@@ -152,3 +153,10 @@ HCURSOR CdialogcallingdialogsDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+#include "CDlgLvl1.h"
+void CdialogcallingdialogsDlg::OnBnClickedDlgLvl1()
+{
+    CDlgLvl1 x(this);
+    x.DoModal();
+} 
