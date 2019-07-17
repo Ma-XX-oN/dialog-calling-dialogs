@@ -23,30 +23,24 @@ CDlgLvl1::~CDlgLvl1()
 BEGIN_MESSAGE_MAP(CDlgLvl1, CDialogEx)
     ON_WM_WINDOWPOSCHANGED()
     ON_MESSAGE(WMA_DIALOGACTION, OnDialogAction)
-    ON_WM_TIMER()
 END_MESSAGE_MAP()
 
 void CDlgLvl1::OnWindowPosChanged(WINDOWPOS* lpwndpos)
 {
     if (!m_shownDlg) {
         m_shownDlg = true;
-        SendMessage(WMA_DIALOGACTION);
+        PostMessage(WMA_DIALOGACTION);
     }
 }
 
+// Level 1 dialog opening up level 2 dialog
 LRESULT CDlgLvl1::OnDialogAction(WPARAM wParam, LPARAM lParam)
 {
-    if (wParam == 0) {
-        SetTimer(0, 100, nullptr);
-    }
-    else if (wParam == 1) {
-        //ShowWindow(SW_SHOW);
-        CDlgLvl2 x(this);
-        x.DoModal();
-    }
+    ShowWindow(SW_SHOW);
+    CDlgLvl2 x(this);
+    x.DoModal();
     return LRESULT();
 }
-
 void CDlgLvl1::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);

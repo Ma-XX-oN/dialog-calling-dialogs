@@ -30,8 +30,8 @@ void CDlgLvl2::OnWindowPosChanging(WINDOWPOS* lpwndpos)
     ASSERT(lpwndpos->hwnd == m_hWnd);
     // Offset dialog to see the problem of dlg2 showing up below dlg1
     if (!(lpwndpos->flags & SWP_NOMOVE)) {
-        lpwndpos->x += 10;
-        lpwndpos->y += 10;
+        lpwndpos->x += 100;
+        lpwndpos->y += 100;
     }
 }
 
