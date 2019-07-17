@@ -68,5 +68,20 @@
     <Image Include="res\dialog-calling-dialogs.ico">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ourHistory_retina.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\figure-life-stages.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\city.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trees.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

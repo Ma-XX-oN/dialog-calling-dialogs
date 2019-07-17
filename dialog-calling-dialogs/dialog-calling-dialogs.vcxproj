@@ -210,7 +210,12 @@
     <None Include="res\dialogcallingdialogs.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\bitmap1.bmp" />
+    <Image Include="res\city.bmp" />
     <Image Include="res\dialog-calling-dialogs.ico" />
+    <Image Include="res\figure-life-stages.jpg" />
+    <Image Include="res\ourHistory_retina.jpg" />
+    <Image Include="res\trees.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
