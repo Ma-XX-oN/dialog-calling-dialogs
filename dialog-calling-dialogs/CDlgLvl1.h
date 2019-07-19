@@ -17,6 +17,7 @@ public:
 #endif
 
 protected:
+    virtual BOOL OnInitDialog();
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
     void OnWindowPosChanged(WINDOWPOS * lpwndpos);
@@ -26,5 +27,4 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
-    afx_msg void OnTimer(UINT_PTR nIDEvent);
 };

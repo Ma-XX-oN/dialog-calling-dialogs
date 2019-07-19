@@ -27,7 +27,7 @@ END_MESSAGE_MAP()
 
 void CDlgLvl1::OnWindowPosChanged(WINDOWPOS* lpwndpos)
 {
-    if (!m_shownDlg) {
+    if (!m_shownDlg && (lpwndpos->flags & SWP_SHOWWINDOW)) {
         m_shownDlg = true;
         PostMessage(WMA_DIALOGACTION);
     }
@@ -36,7 +36,6 @@ void CDlgLvl1::OnWindowPosChanged(WINDOWPOS* lpwndpos)
 // Level 1 dialog opening up level 2 dialog
 LRESULT CDlgLvl1::OnDialogAction(WPARAM wParam, LPARAM lParam)
 {
-    ShowWindow(SW_SHOW);
     CDlgLvl2 x(this);
     x.DoModal();
     return LRESULT();
@@ -51,13 +50,11 @@ void CDlgLvl1::DoDataExchange(CDataExchange* pDX)
 // CDlgLvl1 message handlers
 
 
-void CDlgLvl1::OnTimer(UINT_PTR nIDEvent)
+BOOL CDlgLvl1::OnInitDialog()
 {
-    if (nIDEvent == 0) {
-        if (GetParent()->IsWindowVisible()) {
-            KillTimer(nIDEvent);
-            PostMessage(WMA_DIALOGACTION, 1);
-        }
-    }
-    CDialogEx::OnTimer(nIDEvent);
+    CDialogEx::OnInitDialog();
+    DWORD attrib = TRUE;
+    DwmSetWindowAttribute(m_hWnd, DWMWA_TRANSITIONS_FORCEDISABLED, &attrib, sizeof(attrib));
+    return TRUE;  // return TRUE unless you set the focus to a control
+                  // EXCEPTION: OCX Property Pages should return FALSE
 }
